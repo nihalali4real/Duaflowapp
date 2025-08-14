@@ -1,102 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dua Flow App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="app-container">
-        <h1>Dua Flow</h1>
-
-        <!-- ====================================================== -->
-        <!-- START: NEW AUTHENTICATION SECTION -->
-        <!-- This section adds the sign-up and login form. -->
-        <!-- ====================================================== -->
-        <div id="auth-container" class="auth-container">
-            <input type="email" id="email" placeholder="Email" class="auth-input" />
-            <input type="password" id="password" placeholder="Password" class="auth-input" />
-            <div class="auth-buttons">
-                <button id="signup-btn" class="auth-btn">Sign Up</button>
-                <button id="login-btn" class="auth-btn">Log In</button>
-            </div>
-            <button id="logout-btn" class="auth-btn logout-btn" style="display:none;">Log Out</button>
-            <p id="auth-status">Please sign in to save your sessions.</p>
-        </div>
-        <!-- ====================================================== -->
-        <!-- END: AUTHENTICATION SECTION -->
-        <!-- ====================================================== -->
-
-        <!-- This is your existing timer UI -->
-        <div class="timer-modes">
-            <button class="mode-btn active" data-mode="pomodoro">Pomodoro</button>
-            <button class="mode-btn" data-mode="shortBreak">Short Break</button>
-            <button class="mode-btn" data-mode="longBreak">Long Break</button>
-        </div>
-
-        <div class="timer">
-            <span id="minutes">25</span>
-            <span>:</span>
-            <span id="seconds">00</span>
-        </div>
-
-        <button id="start-stop-btn" class="start-btn">START</button>
-
-        <!-- This is your existing Dua display section -->
-        <div class="dua-container">
-            <h2>Dua of the session</h2>
-            <p id="dua-text">Your Dua will appear here when you start a session.</p>
-        </div>
-
-        <!-- ====================================================== -->
-        <!-- START: NEW SESSION HISTORY SECTION -->
-        <!-- This is where the user's saved sessions will be shown. -->
-        <!-- ====================================================== -->
-        <div id="session-history" class="session-history" style="display:none;">
-            <h2>Your Past Sessions</h2>
-            <ul id="session-list">
-                <!-- Session data will be loaded here from Firestore -->
-            </ul>
-        </div>
-        <!-- ====================================================== -->
-        <!-- END: SESSION HISTORY SECTION -->
-        <!-- ====================================================== -->
-
-    </div>
-
-    <!-- ====================================================== -->
-    <!-- START: FIREBASE SCRIPTS -->
-    <!-- These scripts are required to connect your app to Firebase. -->
-    <!-- ====================================================== -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-
-    <script>
-      //
-      // This has been updated with your specific project keys.
-      //
-      const firebaseConfig = {
-        apiKey: "AIzaSyCQuqlYYZQgg25sPOuXwYPzvX7vTg4XriQ",
-        authDomain: "flowpomodoro-ca5f8.firebaseapp.com",
-        projectId: "flowpomodoro-ca5f8",
-        storageBucket: "flowpomodoro-ca5f8.appspot.com", // Corrected this for you
-        messagingSenderId: "279316417490",
-        appId: "1:279316417490:web:d9b30b5be3734d8613560b",
-        measurementId: "G-WP3DPQPCTJ"
-      };
-
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      const auth = firebase.auth();
-      const db = firebase.firestore();
-    </script>
-    <!-- ====================================================== -->
-    <!-- END: FIREBASE SCRIPTS -->
-    <!-- ====================================================== -->
-
-    <!-- Your script.js file must be loaded AFTER the Firebase scripts -->
-    <script src="script.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DuaFlow</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.jsx"></script>
+  </body>
 </html>
